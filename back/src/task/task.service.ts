@@ -39,10 +39,22 @@ export class TaskService {
   }
 
   async update(id: number, updateTaskDto: UpdateTaskDto): Promise<Task> {
-    const { descripcion, fechaHoraInicio } = updateTaskDto;
+    const { descripcion, fechaHoraInicio, fechaHoraFin, estado } =
+      updateTaskDto;
     const task = await this.findOne(id);
-    task.descripcion = descripcion;
-    task.fechaHoraInicio = new Date(fechaHoraInicio);
+
+    if (estado !== undefined) {
+      task.estado = estado;
+    }
+    if (descripcion !== undefined) {
+      task.descripcion = descripcion;
+    }
+    if (fechaHoraInicio !== undefined) {
+      task.fechaHoraInicio = new Date(fechaHoraInicio);
+    }
+    if (fechaHoraFin !== undefined) {
+      task.fechaHoraFin = new Date(fechaHoraFin);
+    }
 
     return await this.taskRepository.save(task);
   }

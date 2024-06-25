@@ -13,17 +13,37 @@ Este es un proyecto que contiene dos partes principales: `back` y `front`.
   ```
   
   ```sh
-  #front
+  #front/.env
    VITE_BACKEND=http://localhost:3000
   ```
   ```sh
-  #back
+  #back/.emv
     DB_HOST=localhost
 DB_PORT=5432
 DB_USERNAME=myuser
 DB_PASSWORD=mypassword
 DB_DATABASE=mydatabase 
 
+  ```
+  ```sh
+#back/docker-compose.yml
+   version: '3.8'
+
+services:
+  postgresql:
+    image: postgres:latest
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
   ```
 
 2. Ejecuta docker en el back 

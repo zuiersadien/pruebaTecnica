@@ -8,21 +8,23 @@ Este es un proyecto que contiene dos partes principales: `back` y `front`.
 
 1. Renombra el archivo `env.local` a `.env` en la carpeta `back` y 'front':
 
-   ```sh
+  ```sh
    mv back/env.local back/.env
-   
-
-   ```bash
+  ```
+  
+  ```sh
+  #front
    VITE_BACKEND=http://localhost:3000
-   ```
-
-      ```bash
-     DB_HOST=localhost
+  ```
+  ```sh
+  #back
+    DB_HOST=localhost
 DB_PORT=5432
 DB_USERNAME=myuser
 DB_PASSWORD=mypassword
 DB_DATABASE=mydatabase 
-```
+
+  ```
 
 2. Ejecuta docker en el back 
 ```bash

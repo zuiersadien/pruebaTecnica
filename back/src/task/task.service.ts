@@ -17,6 +17,7 @@ export class TaskService {
     const newTask = this.taskRepository.create({
       descripcion,
       fechaHoraInicio: new Date(fechaHoraInicio),
+      estado: false,
     });
     return await this.taskRepository.save(newTask);
   }

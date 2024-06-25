@@ -12,7 +12,6 @@ import {
 import { TaskService } from './task.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
-import { Task } from './task.entity'; // Asegúrate de importar tu entidad Task
 
 @Controller('task')
 export class TaskController {
@@ -77,12 +76,7 @@ export class TaskController {
   async remove(@Param('id') id: string) {
     try {
       const deleteResult = await this.taskService.remove(+id);
-      if (deleteResult.affected === 0) {
-        throw new HttpException(
-          'Tarea no encontrada para eliminar',
-          HttpStatus.NOT_FOUND,
-        );
-      }
+      console.log(deleteResult);
       return { success: true };
     } catch (error) {
       throw new HttpException(

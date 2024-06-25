@@ -16,7 +16,7 @@ export class TaskService {
     const { descripcion, fechaHoraInicio } = createTaskDto;
     const newTask = this.taskRepository.create({
       descripcion,
-      fechaHoraInicio,
+      fechaHoraInicio: new Date(fechaHoraInicio),
     });
     return await this.taskRepository.save(newTask);
   }

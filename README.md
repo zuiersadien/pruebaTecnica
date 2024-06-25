@@ -12,22 +12,17 @@ Este es un proyecto que contiene dos partes principales: `back` y `front`.
    mv back/env.local back/.env
    
 
-  ```
-
-
-
-    ```bash
-   #frontend 
+   ```bash
    VITE_BACKEND=http://localhost:3000
    ```
 
       ```bash
-   #backend
      DB_HOST=localhost
 DB_PORT=5432
 DB_USERNAME=myuser
 DB_PASSWORD=mypassword
-DB_DATABASE=mydatabase  ```
+DB_DATABASE=mydatabase 
+```
 
 2. Ejecuta docker en el back 
 ```bash

@@ -12,7 +12,11 @@ Este es un proyecto que contiene dos partes principales: `back` y `front`.
    mv back/env.local back/.env
    
 
-   ```bash
+  ```
+
+
+
+    ```bash
    #frontend 
    VITE_BACKEND=http://localhost:3000
    ```
